@@ -14,16 +14,18 @@ const Navbar = () => {
   };
 
   const handleItemClick = (id) => {
-    console.log(id);
+    const newMenuItems = menuItems.map((item) => ({
+      ...item,
+      active: item.id === id,
+    }));
+    setMenuItems(newMenuItems);
   };
 
   const renderMenu = () => {
     return open ? (
-      <ul className="list-group">
+      <ul className="nav nav-pills flex-column mb-auto">
         {menuItems.map((item) => (
-          <Navlink key={item.id} text={item.text} active={item.active}>
-            <a href={item.link}>{item.text}</a>
-          </Navlink>
+          <Navlink key={item.id} {...item} onActiveChange={handleItemClick} />
         ))}
       </ul>
     ) : null;
@@ -74,7 +76,7 @@ const Navbar = () => {
   return (
     <div>
       <button className="btn btn-sm btm-primary" onClick={handleMenuClick}>
-        Меню {renderArrow()}
+        Меню
       </button>
       {renderMenu()}
     </div>
