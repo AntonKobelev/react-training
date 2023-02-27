@@ -1,10 +1,20 @@
-function Page () {
-    return (
-        <div>
-            <header>Заголовок</header>
-            <footer>Подвал</footer>
-        </div>
-    )
-}
+import React from 'react';
+import Navbar from "./navbar";
 
-export default Page
+const Page = () => {
+  const logoUrl = "https://picsum.photos/100";
+  const sitename = "example.com";
+
+  return (
+    <>
+      <header>
+        <div>{sitename}</div>{" "}
+        <img src={logoUrl} alt="logo" />
+        <Navbar />
+      </header>
+      <footer>подвал</footer>
+    </>
+  );
+};
+
+export default Page;

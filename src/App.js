@@ -1,15 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import Page from './components/page';
+import "./App.css";
+import Page from "./components/page";
 
-function App() {
+const App = () => {
   return (
-    <>
+    <div className="App">
       <Page />
-      <div className="App">
-        <header>Hello!</header>
-      </div>
-    </>
+    </div>
   );
 }
 
