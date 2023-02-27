@@ -13,7 +13,7 @@ const Navlink = (props) => {
 
   return (
     <li className={getClasses()} onClick={handleClick}>
-      {props.text}
+      {props.children}
     </li>
   );
 };
