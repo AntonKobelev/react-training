@@ -1,10 +1,8 @@
 import React from "react";
-import { useState } from "react";
 
 const Navlink = (props) => {
-  
   const handleClick = () => {
-    props.onActiveChange(props.id)
+    props.onActiveChange(props.id);
   };
   const getClasses = () => {
     let classes = "nav-link";
@@ -12,11 +10,11 @@ const Navlink = (props) => {
   };
 
   return (
-    <div>
-      <li className="nav-item" onClick={handleClick}>
-        <a href={props.link} className={getClasses()}>{props.text}</a>
-      </li>
-    </div>
+    <li className="nav-item" onClick={handleClick}>
+      <a href={props.link} className={getClasses()}>
+        {props.text}
+      </a>
+    </li>
   );
 };
 
